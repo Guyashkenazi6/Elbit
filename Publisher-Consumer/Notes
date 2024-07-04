@@ -1,0 +1,29 @@
+Home assigment Qualitest 
+
+Implementing a Publisher and consumer with Python using massage Queue
+
+• Kafka or Rabbit MQ 
+
+• Implement a python program for the Publisher that sends messages to the "ABC" channel. 
+1. Connect to Rabbit MQ- connect to the Rabbit MQ server 
+
+2. Send the messages 
+- input the number of messages and send every message to the consumer via the channel. 
+
+3. In the main Program execution 
+- input the number of messages i 
+
+• trigger the function's ahfckiebbi.IM?snnheIiton 
+
+• Implement a Python Program for the consumer that subscribes to the "ABC" Channel and Prints out the received messages 
+1. Connect to Rabbit MQ- connect to the Rabbit MQ server 
+
+2. Callback - Prints the body of the message after Received: 
+
+3. Start consuming- sets up the consumer to start listening for messages 
+
+4. In the main Program execution- 
+• Input the Rabbit MQ server. 
+• establish a connection to Rabbit MQ 
+• begin consuming messages 
+• Once the consumer is stopped, closes the channel and the connection and prints a message back.
