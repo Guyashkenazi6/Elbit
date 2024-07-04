@@ -49,13 +49,13 @@ To allow desktop notifications to work properly:
 
  ## Terminal Text
 
-![Terminal Text](Screenshot_C.png)
+![Terminal Text](images/Screenshot_C.png)
 
 
 
  ## Desktop Notification
 
-![Desktop Notification](Screenshot_A.png)
+![Desktop Notification](images/Screenshot_A.png)
 
 
 
