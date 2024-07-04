@@ -19,6 +19,9 @@ If you don't have RabbitMQ installed, you can download and install it from the o
 docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
 
+![Terminal Text](images/Terminal-R.png)
+
+
 This command will start RabbitMQ and also expose the management interface at http://localhost:15672 (default login with guest/guest).
 
 2. **Install Pika**:
@@ -36,6 +39,8 @@ No additional configuration is required for the scripts to run on localhost with
      ```
      python consumer.py
      ```
+
+      ![Terminal Text](images/Terminal-C.png)
    - If prompted, enter the RabbitMQ host address or press Enter to use localhost.
 
 2. **Start the Publisher**:
@@ -44,6 +49,7 @@ No additional configuration is required for the scripts to run on localhost with
      ```
      python publisher.py
      ```
+     ![Terminal Text](images/Terminal-P.png)
    - Enter the number of messages to send when prompted.
    - If prompted, enter the RabbitMQ host address or press Enter to use localhost.
 
@@ -57,6 +63,9 @@ No additional configuration is required for the scripts to run on localhost with
 - Ensure that the RabbitMQ server is running and accessible from the host running the scripts.
 - Check that the Python version is 3.x and that the Pika library is installed correctly.
 - If the scripts cannot connect to RabbitMQ, verify the host details and ensure that there are no network issues.
+
+
+
 
 
 
