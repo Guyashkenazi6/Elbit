@@ -66,6 +66,11 @@ No additional configuration is required for the scripts to run on localhost with
 
 
 
+## RabbitMQ UI
 
-
+![Terminal Text](images/RMQ-O.png)
+![Terminal Text](images/RMQ-C.png)
+![Terminal Text](images/RMQ-CH.png)
+![Terminal Text](images/RMQ-E.png)
+![Terminal Text](images/RMQ-Q.png)
 
