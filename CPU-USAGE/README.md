@@ -43,3 +43,27 @@ To allow desktop notifications to work properly:
 2. **Run the script** from your terminal or command prompt:
    ```bash
    python cpu_usage_monitor.py
+   ```
+
+
+
+ ## Terminal Text
+
+![Terminal Text](Screenshot_C.png)
+
+
+
+ ## Desktop Notification
+
+![Desktop Notification](Screenshot_A.png)
+
+
+
+
+
+
+
+
+
+
+
