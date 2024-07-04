@@ -2,22 +2,30 @@ import pika
 import sys
 import time
 
-def connect_to_rabbitmq():
-    try:
-        return pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-    except pika.exceptions.AMQPConnectionError:
-        print("Failed to connect to RabbitMQ. Is the service running?")
-        sys.exit(1)
+def connect_to_rabbitmq(host):
+    while True:
+        try:
+            return pika.BlockingConnection(pika.ConnectionParameters(host=host))
+        except pika.exceptions.AMQPConnectionError:
+            print("Failed to connect to RabbitMQ. Is the service running?")
+            time.sleep(5)
+        except KeyboardInterrupt:
+            print("Publisher interrupted by user during connection attempt.")
+            sys.exit(1)
 
 def send_messages(channel, num_messages):
-    for i in range(num_messages):
-        message = f"Message number {i}"
-        channel.basic_publish(exchange='', routing_key='ABC', body=message)
-        print(f"Sent: {message}")
-        time.sleep(1)  # Simulate processing time
+    try:
+        for i in range(num_messages):
+            message = f"Message number {i}"
+            channel.basic_publish(exchange='', routing_key='ABC', body=message)
+            print(f"Sent: {message}")
+            time.sleep(1)  # Simulate processing time
+    except KeyboardInterrupt:
+        print("Publisher interrupted by user during message sending.")
 
 def main():
-    connection = connect_to_rabbitmq()
+    host = input("Enter RabbitMQ host (default 'localhost'): ") or 'localhost'
+    connection = connect_to_rabbitmq(host)
     channel = connection.channel()
     channel.queue_declare(queue='ABC')
     
@@ -26,9 +34,8 @@ def main():
         send_messages(channel, num_messages)
     except ValueError:
         print("Please enter a valid integer for the number of messages.")
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
     finally:
+        channel.close()
         connection.close()
         print("Connection closed.")
 

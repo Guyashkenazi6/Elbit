@@ -2,13 +2,17 @@ import pika
 import time
 import sys
 
-def connect_to_rabbitmq():
-    while True:
+def connect_to_rabbitmq(host):
+    retry_count = 0
+    while retry_count < 5:
         try:
-            return pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+            return pika.BlockingConnection(pika.ConnectionParameters(host=host))
         except pika.exceptions.AMQPConnectionError:
-            print("Failed to connect to RabbitMQ. Retrying in 5 seconds...")
+            retry_count += 1
+            print(f"Failed to connect to RabbitMQ. Retrying in 5 seconds... (Attempt {retry_count})")
             time.sleep(5)
+    print("Failed to connect after 5 attempts.")
+    sys.exit(1)
 
 def callback(ch, method, properties, body):
     print(f"Received: {body.decode()}")
@@ -20,12 +24,15 @@ def start_consuming(channel):
         channel.start_consuming()
     except KeyboardInterrupt:
         print("Consumer stopped by user.")
+        channel.stop_consuming()
 
 def main():
-    connection = connect_to_rabbitmq()
+    host = input("Enter RabbitMQ host (default 'localhost'): ") or 'localhost'
+    connection = connect_to_rabbitmq(host)
     channel = connection.channel()
     channel.queue_declare(queue='ABC')
     start_consuming(channel)
+    channel.close()
     connection.close()
     print("Connection closed.")
 
