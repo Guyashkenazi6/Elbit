@@ -1,0 +1,23 @@
+Home Assigment Qulitest.
+Creating a service to monitor CPU Usage and send alerts.
+
+Steps to implement:
+1. Python Script 
+
+2. locate in Python how to monitor the CPU Usage 
+Psutil module - libary for retriving information on running Processes and system utilization 
+
+3. Select how to notify Desktop notification using notification from Plyer module 
+
+4. Creating the script 
+• import the necessary libraries
+- Psutil 
+- time 
+- Plyer.noticitation 
+• Define necessary functions 
+- Send notification 
+- monitor CPU usage 
+• Main Program execution 
+- Get the alert threshold and the check interval as a input and not as a set Parameter. 
+
+The Service would continuously monitor the CPU usage as often as set in the check-interval input

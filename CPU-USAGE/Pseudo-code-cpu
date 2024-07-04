@@ -1,0 +1,30 @@
+Pseudo-code for CPU Usage Monitoring and Notification System
+
+1. Import necessary libraries
+   - psutil for accessing system details
+   - time for managing intervals
+   - plyer.notification for sending desktop notifications
+
+2. Define function send_notification(cpu_usage)
+   - Input: cpu_usage (percentage of CPU usage)
+   - Action: Display a notification with:
+     - Title: "High CPU Alert"
+     - Message: "Your CPU usage is at [cpu_usage]%. Please check your system."
+     - Icon: None (default system icon)
+     - Timeout: 10 seconds (notification duration)
+
+3. Define function monitor_cpu_usage(alert_threshold, check_interval)
+   - Input: alert_threshold (CPU usage percentage to trigger alert)
+            check_interval (time in seconds between checks)
+   - While true (infinite loop to continuously check CPU usage)
+     - Get current CPU usage using psutil
+     - Print current CPU usage to console
+     - If CPU usage exceeds the alert_threshold:
+       - Print alert message to console
+       - Call send_notification with current CPU usage
+     - Sleep for check_interval seconds
+
+4. Main program execution
+   - Get user input for alert_threshold and check_interval
+   - Validate that inputs are numbers, otherwise exit with error message
+   - Call monitor_cpu_usage with user-provided values
