@@ -13,16 +13,16 @@ Before running the scripts, ensure you have the following installed:
 
 1. ### Install RabbitMQ
 
-If you don't have RabbitMQ installed, you can download and install it from the official [RabbitMQ website](https://www.rabbitmq.com/download.html). Alternatively, you can run RabbitMQ via Docker using the following command:
+   If you don't have RabbitMQ installed, you can download and install it from the official [RabbitMQ website](https://www.rabbitmq.com/download.html). Alternatively, you can run RabbitMQ via Docker using the following command:
 
-```bash
-docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-```
+   ```bash
+   docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+   ```
 
-![Terminal Text](images/Terminal-R.png)
+   ![Terminal Text](images/Terminal-R.png)
 
 
-This command will start RabbitMQ and also expose the management interface at http://localhost:15672 (default login with guest/guest).
+   This command will start RabbitMQ and also expose the management interface at http://localhost:15672 (default login with guest/guest).
 
 2. **Install Pika**:
    - Run `pip install pika` to install the Pika library.
