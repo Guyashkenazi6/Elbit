@@ -3,6 +3,14 @@ Home assigment Qualitest
 Implementing a Publisher and consumer with Python using massage Queue
 
 • Kafka or Rabbit MQ 
+- Kafka and RabbitMQ are both popular message brokers but are designed for slightly different use cases.
+Kafka is optimized for high-throughput and scalability, handling large volumes of data and enabling the retention of messages
+for configurable periods, making it ideal for big data applications and real-time analytics. 
+RabbitMQ, on the other hand, excels in traditional messaging scenarios where robustness and advanced message routing and queueing
+features are needed. RabbitMQ supports a variety of messaging protocols and is easier to set up for simple queueing requirements
+compared to Kafka's more complex clustering and topic management.
+I choosed RabbitMQ.
+To set up RabbitMQ i would be running it via Docker, you could also run RabbitMQ via Kubernetes Cluster. 
 
 • Implement a python program for the Publisher that sends messages to the "ABC" channel. 
 1. Connect to Rabbit MQ- connect to the Rabbit MQ server 
@@ -23,7 +31,8 @@ Implementing a Publisher and consumer with Python using massage Queue
 3. Start consuming- sets up the consumer to start listening for messages 
 
 4. In the main Program execution- 
-• Input the Rabbit MQ server. 
-• establish a connection to Rabbit MQ 
+• Input the RabbitMQ server
+• establish a connection to RabbitMQ 
 • begin consuming messages 
-• Once the consumer is stopped, closes the channel and the connection and prints a message back.
+• Once the consumer is stopped, closes the channel and the connection and prints a message back, importent to close
+the connection to save on resources.
