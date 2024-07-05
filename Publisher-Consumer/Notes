@@ -1,38 +1,41 @@
-Home assigment Qualitest 
+Home Assignment: Qualitest
 
-Implementing a Publisher and consumer with Python using massage Queue
+Implementing a Publisher and Consumer with Python using a Message Queue
 
-• Kafka or Rabbit MQ 
-- Kafka and RabbitMQ are both popular message brokers but are designed for slightly different use cases.
-Kafka is optimized for high-throughput and scalability, handling large volumes of data and enabling the retention of messages
-for configurable periods, making it ideal for big data applications and real-time analytics. 
-RabbitMQ, on the other hand, excels in traditional messaging scenarios where robustness and advanced message routing and queueing
-features are needed. RabbitMQ supports a variety of messaging protocols and is easier to set up for simple queueing requirements
-compared to Kafka's more complex clustering and topic management.
-I choosed RabbitMQ.
-To set up RabbitMQ i would be running it via Docker, you could also run RabbitMQ via Kubernetes Cluster. 
+• Kafka or RabbitMQ 
+  - Kafka and RabbitMQ are both popular message brokers but are designed for slightly different use cases.
+    Kafka is optimized for high throughput and scalability, handling large volumes of data and enabling the retention of messages
+    for configurable periods, making it ideal for big data applications and real-time analytics.
+    RabbitMQ, on the other hand, excels in traditional messaging scenarios where robustness and advanced message routing and queueing
+    features are needed. RabbitMQ supports a variety of messaging protocols and is easier to set up for simple queueing requirements
+    compared to Kafka's more complex clustering and topic management.
+    I chose RabbitMQ.
+    To set up RabbitMQ, I would be running it via Docker; alternatively, you could run RabbitMQ via a Kubernetes cluster. 
 
-• Implement a python program for the Publisher that sends messages to the "ABC" channel. 
-1. Connect to Rabbit MQ- connect to the Rabbit MQ server 
+• Implement a Python program for the Publisher that sends messages to the "ABC" channel:
 
-2. Send the messages 
-- input the number of messages and send every message to the consumer via the channel. 
+    1. Connect to RabbitMQ - connect to the RabbitMQ server.
 
-3. In the main Program execution 
-- input the number of messages i 
+    2. Send the messages:
+        - Input the number of messages and send every message to the consumer via the channel.
 
-• trigger the function's ahfckiebbi.IM?snnheIiton 
+    3. In the main program execution:
+        - Input the number of messages.
+        - Input the RabbitMQ host.
+        - Trigger the functions and close the connection.
 
-• Implement a Python Program for the consumer that subscribes to the "ABC" Channel and Prints out the received messages 
-1. Connect to Rabbit MQ- connect to the Rabbit MQ server 
 
-2. Callback - Prints the body of the message after Received: 
+• Implement a Python Program for the Consumer that subscribes to the "ABC" Channel and prints out the received messages:
 
-3. Start consuming- sets up the consumer to start listening for messages 
+    1. Connect to RabbitMQ - connect to the RabbitMQ server.
 
-4. In the main Program execution- 
-• Input the RabbitMQ server
-• establish a connection to RabbitMQ 
-• begin consuming messages 
-• Once the consumer is stopped, closes the channel and the connection and prints a message back, importent to close
-the connection to save on resources.
+    2. Callback - Print the body of the message after it is received.
+
+    3. Start consuming - set up the consumer to start listening for messages on the "ABC" channel.
+
+    4. In the main program execution:
+        • Input the RabbitMQ server.
+        • Establish a connection to RabbitMQ.
+        • Begin consuming messages.
+        • Once the consumer is stopped, close the channel and the connection and print a message back; it is important to close
+          the connection to save on resources.

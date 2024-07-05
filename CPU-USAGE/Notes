@@ -1,23 +1,33 @@
-Home Assigment Qulitest.
-Creating a service to monitor CPU Usage and send alerts.
+Home Assignment: Qualitest
+Creating a service to monitor CPU usage and send alerts.
 
 Steps to implement:
+
 1. Python Script 
+    - In the script, I implemented the use of edge cases, which is important, if the input is an invalid input, for example.
+      I also changed the given 80% CPU usage target to an input (alert_threshold) for future changes.
 
-2. locate in Python how to monitor the CPU Usage 
-Psutil module - libary for retriving information on running Processes and system utilization 
+2. Locate in Python how to monitor the CPU Usage 
+    - Psutil module - library for retrieving information on running processes and system utilization. 
 
-3. Select how to notify Desktop notification using notification from Plyer module 
+3. Select how to notify: Desktop notification using notification from the Plyer module
+    - Desktop notification using the notification from the Plyer module.
 
-4. Creating the script 
-• import the necessary libraries
-- Psutil 
-- time 
-- Plyer.noticitation 
-• Define necessary functions 
-- Send notification 
-- monitor CPU usage 
-• Main Program execution 
-- Get the alert threshold and the check interval as a input and not as a set Parameter. 
+4. Creating the script:
 
-The Service would continuously monitor the CPU usage as often as set in the check-interval input
+• Import the necessary libraries:
+    - psutil for accessing system details.
+    - time for managing intervals.
+    - plyer.notification for sending desktop notifications.
+    
+• Define necessary functions:
+    1. Send notification 
+        - Sends a desktop notification when CPU usage exceeds the threshold.
+
+    2. Monitor CPU usage
+        - Monitors the CPU usage and sends a desktop notification if the threshold is exceeded.
+
+• Main program execution:
+    - Get the alert threshold and the check interval as an input and not as a set parameter.
+
+The service would continuously monitor the CPU usage as often as set in the check interval input.
