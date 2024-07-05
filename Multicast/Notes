@@ -1,0 +1,81 @@
+Home Assignment: Qualitest.
+Understanding and Moving Multicast Messages Between Networks.
+
+• Provide a clear definition of multicast and its typical use cases.
+
+    Multicast - Refers to the communication protocol used for sending a single message or stream of information to multiple
+                recipients simultaneously. 
+
+    Unicast - Establishes a one-to-one communication channel.
+
+    Broadcast - Sends to all network devices indiscriminately. 
+
+    Multicast efficiently targets a specific group of interested receivers. 
+    This is achieved by using specific multicast IP addresses that represent a group of recipients rather than single hosts.
+
+    Typical Use Cases of Multicast Include:
+
+        1. Streaming Media - Multicast is extensively used in the distribution of live video and audio streams, such as live television
+          broadcasts or webinars, where the same data is simultaneously consumed by multiple viewers.
+
+        2. Real-time Applications - Financial stock exchange data, auctions, or gaming applications where timely and synchronous data 
+           delivery is critical.
+
+        3. Software Updates - Distributing software updates to multiple computers within a network at the same time to save bandwidth and
+           reduce server load.
+
+• Describe the solutions or techniques used to move multicast messages between networks.
+
+    Solutions for Moving Multicast Messages Between Networks:
+
+        Moving multicast messages between different networks, particularly from one network to another isolated network segment,
+        requires specific techniques because routers do not forward multicast traffic by default.
+
+        1. IGMP (Internet Group Management Protocol): IGMP is used within a single network to manage the membership of multicast groups.
+           Hosts use IGMP to report their multicast group memberships to adjacent routers, but it does not facilitate multicast
+           routing between networks.
+
+        2. Multicast Routing Protocols: These protocols are designed to enable the routing of multicast packets across network boundaries. 
+           Common multicast routing protocols include: 
+
+           - PIM (Protocol Independent Multicast): Works in either Dense Mode (PIM-DM) or Sparse Mode (PIM-SM),
+             depending on the density of group members across the networks. PIM-SM is more scalable for larger network architectures.
+           
+           - DVMRP (Distance Vector Multicast Routing Protocol): Uses a distance vector algorithm to determine the multicast path across
+             the internet, similar to how RIP works for unicast routing.
+        
+        3. MBGP (Multicast Border Gateway Protocol): Used to exchange multicast source information between Autonomous Systems (AS).
+           MBGP allows the multicast routing information to be integrated with unicast routing frameworks to streamline paths
+           across disparate networks.
+
+
+• Provide an example scenario to illustrate your explanation.
+
+    Example Scenario
+
+    A company is organizing a live worldwide webinar. Their main office in Israel is where the webinar is broadcasted from,
+    and they need to distribute this live feed to their offices in Germany, Usa, and Switzerland.
+
+    Solution:
+
+    1. Setup:
+       Each office network subscribes to the multicast group address 239.0.0.1. The Israel office uses a multicast source
+       to send the stream to this address. 
+    
+    2. Local Network Handling: 
+    Inside each office, routers use IGMP to manage which local machines join the multicast group
+       and need to receive the webinar stream.
+
+    3. Inter-Network Routing:
+    - Using PIM-SM: The routers at each office are configured with PIM-SM. The Israel router acts as the RP (Rendezvous Point) 
+      where all paths from different networks converge.
+    
+    - Path Establishment: When the webinar starts, the Germany, Usa, and Switzerland routers send PIM join messages towards the Israel RP.
+      This setup establishes a multicast distribution tree rooted at the RP.
+    
+    4. Transmission: The webinar stream is multicast from Israel to the RP, and from there, it is distributed down the tree to the
+       Germany, Usa, and Switzerland offices.
+
+    This setup ensures that the webinar reaches all global offices efficiently, with minimal bandwidth usage and without sending
+    separate streams across the internet for each location.
+
