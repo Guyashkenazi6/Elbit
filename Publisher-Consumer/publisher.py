@@ -19,7 +19,7 @@ def send_messages(channel, num_messages):
             message = f"Message number {i}"
             channel.basic_publish(exchange='', routing_key='ABC', body=message)
             print(f"Sent: {message}")
-            time.sleep(1)  # Simulate processing time
+            time.sleep(1)  
     except KeyboardInterrupt:
         print("Publisher interrupted by user during message sending.")
 
