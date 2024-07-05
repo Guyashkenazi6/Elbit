@@ -6,6 +6,7 @@ Steps to implement:
 1. Python Script 
     - In the script, I implemented the use of edge cases, which is important, if the input is an invalid input, for example.
       I also changed the given 80% CPU usage target to an input (alert_threshold) for future changes.
+      I used While true, infinite loop to continuously check CPU usage.
 
 2. Locate in Python how to monitor the CPU Usage 
     - Psutil module - library for retrieving information on running processes and system utilization. 
