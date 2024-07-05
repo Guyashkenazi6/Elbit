@@ -1,20 +1,20 @@
 import psutil
 import time
-from plyer import notification  # Import the notification module from plyer
+from plyer import notification
 
 def send_notification(cpu_usage):
     """Sends a desktop notification when CPU usage exceeds the threshold."""
     notification.notify(
         title='High CPU Alert',
         message=f'Your CPU usage is at {cpu_usage}%. Please check your system.',
-        timeout=10  # Notification disappears after 10 seconds
+        timeout=10
     )
 
 def monitor_cpu_usage(alert_threshold, check_interval):
     """Monitors the CPU usage and sends a desktop notification if the threshold is exceeded."""
     while True:
         cpu_usage = psutil.cpu_percent(interval=1)
-        print(f"Current CPU usage: {cpu_usage}%")  # Still printing to console for logs
+        print(f"Current CPU usage: {cpu_usage}%")
         if cpu_usage > alert_threshold:
             print(f"CPU usage exceeded {alert_threshold}%. Sending alert...")
             send_notification(cpu_usage)
