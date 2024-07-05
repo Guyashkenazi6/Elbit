@@ -15,7 +15,7 @@ Implementing a Publisher and Consumer with Python using a Message Queue
 • Implement a Python program for the Publisher that sends messages to the "ABC" channel:
 
     1. • Import the necessary libraries:
-        - import pika to allow the script to interact with RabbitMQ
+        - import pika to allow the script to interact with RabbitMQ.
         - import sys to exit the script when the user interrupts the connection attempt or during message sending.
         - import time to pausing the execution of the script for a specified amount of time.
 
@@ -33,9 +33,9 @@ Implementing a Publisher and Consumer with Python using a Message Queue
 • Implement a Python Program for the Consumer that subscribes to the "ABC" Channel and prints out the received messages:
 
     1. • Import the necessary libraries:
-        - import pika to allow the script to interact with RabbitMQ
+        - import pika to allow the script to interact with RabbitMQ.
         - import sys to terminate the script if the connection to RabbitMQ fails after a specified number of retries.
-        - import time to implement delays between reconnection attempts
+        - import time to implement delays between reconnection attempts.
     
     2. Connect to RabbitMQ - connect to the RabbitMQ server.
 
