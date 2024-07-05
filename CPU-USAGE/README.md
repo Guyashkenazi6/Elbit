@@ -42,7 +42,7 @@ To allow desktop notifications to work properly:
 
 2. **Run the script** from your terminal or command prompt:
    ```bash
-   python cpu_usage_monitor.py
+   python cpu.py
    ```
 
 
