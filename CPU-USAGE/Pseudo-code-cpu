@@ -10,7 +10,6 @@ Pseudo-code for CPU Usage Monitoring and Notification System
    - Action: Display a notification with:
      - Title: "High CPU Alert"
      - Message: "Your CPU usage is at [cpu_usage]%. Please check your system."
-     - Icon: None (default system icon)
      - Timeout: 10 seconds (notification duration)
 
 3. Define function monitor_cpu_usage(alert_threshold, check_interval)
