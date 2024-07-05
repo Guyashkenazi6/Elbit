@@ -2,6 +2,7 @@ import pika
 import time
 import sys
 
+
 def connect_to_rabbitmq(host):
     retry_count = 0
     while retry_count < 5:
